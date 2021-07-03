@@ -1,21 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import useForm from '../../Hooks/UseForm';
-import { UserContext } from '../../UseContext/UserContext';
+import useForm from '../../../Hooks/UseForm';
+import { useUser } from '../../../UseContext/UserContext';
 
-import Input from '../Forms/Input/Input.js';
-import Button from '../Forms/Buttons/Button.js';
+import Input from '../../Forms/Input/Input.js';
+import Button from '../../Forms/Buttons/Button.js';
 
-import Error from '../Helper/Error';
+import Error from '../../Helper/Error';
 
 import styles from './LoginForm.module.css';
-import stylesBtn from '../Forms/Buttons/Button.module.css';
+import stylesBtn from '../../Forms/Buttons/Button.module.css';
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
-  const { userLogin, error, loading } = useContext(UserContext);
+  const { userLogin, error, loading } = useUser();;
 
   async function handleSubmit(event) {
     event.preventDefault();

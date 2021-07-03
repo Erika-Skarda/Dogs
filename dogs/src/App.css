@@ -19,7 +19,10 @@ body {
   --secondary: #fb1;
 
   --subtitle: #666;
-  --background: #ddd ;
+  --background: #ddd;
+
+  --a : #eee;
+  --active: #fea;
 }
 
 h1, h2, h3, h4, p {
