@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useCallback }  from 'react';
+import React, { createContext, useState, useEffect, useCallback, useContext }  from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST } from '../Api/api';
 import { getToken } from '../Utils/constants';
@@ -12,7 +12,6 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  
   const  userLogout =  useCallback (async function() {
     setData(null);
     setError(null);
@@ -79,6 +78,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       } 
     }
     autoLogin();
@@ -96,4 +97,8 @@ export const UserStorage = ({ children }) => {
      {children}
     </UserContext.Provider>
   )
+}
+
+export const useUser = () => {
+  return useContext(UserContext);
 }
