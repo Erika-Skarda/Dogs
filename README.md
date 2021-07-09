@@ -68,5 +68,5 @@ npm run start
 ## Linkedin
 
   <p>    
-        Feito com 💛 <a href="https://www.linkedin.com/in/erika-skarda/" target="_blank">Erika Skarda</a>
+    Feito com 💛 <a href="https://www.linkedin.com/in/erika-skarda/" target="_blank">Erika Skarda</a>
   </p
