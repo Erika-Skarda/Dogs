@@ -19,8 +19,6 @@ const FeedModal = ({ photo, setModalPhoto }) => {
   function handleOutsideClick(e) {
     if(e.target === e.currentTarget) setModalPhoto(null);
   }
-
-  console.log(photo)
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
       {error && <Error error={error}/>}

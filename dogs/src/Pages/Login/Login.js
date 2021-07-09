@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import { UserContext } from '../../UseContext/UserContext';
+import  { useUser } from '../../UseContext/UserContext';
 
 import LoginForm from '../../Components/Login/LoginForm/LoginForm';
 import LoginCreate from '../../Components/Login/LoginCreate';
@@ -11,7 +11,7 @@ import LoginPasswordReset from '../../Components/Login/LoginPasswordReset';
 import styles from './Login.module.css';
 
 const Login = () => {
-  const { login } = useContext(UserContext);
+  const { login } = useUser();
 
   if(login === true) return <Navigate to="/conta" />;
   return (
