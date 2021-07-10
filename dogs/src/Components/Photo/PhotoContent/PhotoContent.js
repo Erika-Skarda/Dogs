@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useUser } from '../../../UseContext/UserContext';
 import PhotoComments from '../PhotoComments/PhotoComments';
+import PhotDelete from '../PhotoDelete/PhotoDelete';
 import styles from './PhotoContent.module.css';
 
 const PhotoContent = ({ data }) => {
-
+  const  user  = useUser();
   const { photo, comments } = data;
+
+  console.log(user.data)
   return (
     <div className={styles.photo}>
       <div className={styles.img}>
@@ -14,7 +18,10 @@ const PhotoContent = ({ data }) => {
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            {user.data && user.data.username === photo.author 
+            ? ( <PhotDelete id={photo.id} /> 
+            ) : ( <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            )}
             <span className={styles.visualizacoes}>{photo.acessos}</span>
           </p>
           <h1 className="title">
