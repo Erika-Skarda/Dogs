@@ -10,7 +10,6 @@ const PhotoContent = ({ data }) => {
   const  user  = useUser();
   const { photo, comments } = data;
 
-  console.log(user.data)
   return (
     <div className={styles.photo}>
       <div className={styles.img}>

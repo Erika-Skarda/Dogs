@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useFetch from '../../../Hooks/useFetch';
 import { PHOTO_GET } from '../../../Api/api';
 import Error from '../../Helper/Error';
-import Loading from '../../Helper/Loading';
+import Loading from '../../Helper/Loading/Loading';
 import PhotoContent from '../../Photo/PhotoContent/PhotoContent';
 import styles from './FeedModal.module.css';
 
