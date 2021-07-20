@@ -7,10 +7,10 @@ import Footer from './Components/Footer/Footer';
 import User from './Components/User/User';
 import UserProfile from './Components/User/UserProfile/UserProfile'
 import Photo from './Components/Photo/Photo/Photo';
+import NotFound from './Components/NotFound/NotFound';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
-
 function App() {
 
   return (
@@ -24,6 +24,7 @@ function App() {
               <ProtectedRoute path='conta/*' element={<User />} />
               <Route path='foto/:id' element={<Photo />} />
               <Route path='perfil/:user' element={<UserProfile />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           <Footer /> 
         </UserStorage>
