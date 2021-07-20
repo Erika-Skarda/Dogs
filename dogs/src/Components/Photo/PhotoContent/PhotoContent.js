@@ -6,12 +6,12 @@ import PhotDelete from '../PhotoDelete/PhotoDelete';
 import styles from './PhotoContent.module.css';
 import Image from '../../Helper/Image/Image';
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const  user  = useUser();
   const { photo, comments } = data;
 
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title}/>
         {/* <img src={photo.src} alt={photo.title} /> */}
@@ -34,7 +34,7 @@ const PhotoContent = ({ data }) => {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments id={photo.id} comments={comments} single={single} />
     </div>
   );
 }
