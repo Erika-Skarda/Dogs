@@ -3,6 +3,7 @@ import React from 'react';
 import Input from '../Forms/Input/Input.js';
 import Button from '../Forms/Buttons/Button.js';
 import Error from '../Helper/Error';
+import Head from '../../Helper/Head';
 
 import { USER_POST } from '../../Api/api';
 
@@ -34,6 +35,7 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Crie sua Conta"/>
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input

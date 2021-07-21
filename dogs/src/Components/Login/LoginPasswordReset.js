@@ -6,6 +6,7 @@ import useFetch from '../../Hooks/useFetch';
 import useForm from '../../Hooks/UseForm';
 import { PASSWORD_RESET } from '../../Api/api.js';
 import Error from '../Helper/Error';
+import Head from '../Helper/Head';
 
 const LoginPasswordReset = () => {
   const [login, setLogin] = useState('');
@@ -38,6 +39,7 @@ const LoginPasswordReset = () => {
 
   return (
     <div>
+      <Head title="Resete a Senha"/>
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input
