@@ -3,7 +3,7 @@ import React from 'react';
 import Input from '../Forms/Input/Input.js';
 import Button from '../Forms/Buttons/Button.js';
 import Error from '../Helper/Error';
-import Head from '../../Helper/Head';
+import Head from '../Helper/Head';
 
 import { USER_POST } from '../../Api/api';
 
